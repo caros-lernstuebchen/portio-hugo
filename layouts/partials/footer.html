@@ -87,7 +87,7 @@
 		</div>
 	</div>
 </section>
-<script src="https://maps.googleapis.com/maps/api/js?key={{ .Site.Params.map.APIkey }}&libraries=geometry"></script>
+<script src="{{ "plugins/leaflet/leaflet.js" | absURL }}"></script>
 <script src="{{ "plugins/jQuery/jquery.min.js" | absURL }}"></script>
 <script src="{{ "plugins/bootstrap/bootstrap.min.js" | absURL }}"></script>
 <script src="{{ "plugins/slick/slick.min.js" | absURL }}"></script>
@@ -100,3 +100,15 @@
 <script src="{{ $formhandler.Permalink }}"></script> -->
 {{ $script := resources.Get "js/script.js" | minify }}
 <script src="{{ $script.Permalink }}"></script>
+<script>
+	{{ $map := .Site.Params.map }}
+	var map = L.map('map').setView([{{ $map.latitude }}, {{ $map.longitude }}], {{ $map.zoomLevel }});
+
+	L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+
+	L.marker([{{ $map.latitude }}, {{ $map.longitude }}]).addTo(map)
+			.bindPopup({{ $map.popupText }})
+			.openPopup();
+</script>
