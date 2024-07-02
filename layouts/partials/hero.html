@@ -28,7 +28,9 @@
             </svg>
           </div>
           <div class="mb-5">
+            {{ if .topTitle }}
             <span class="top-title pre-line">{{ .topTitle }}</span>
+            {{ end }}
             {{ .content | markdownify }}
           </div>
           <a type="button" class="btn btn-lg btn-primary btn-zoom"

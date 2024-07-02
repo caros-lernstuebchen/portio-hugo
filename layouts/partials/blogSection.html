@@ -8,7 +8,9 @@
 		<div class="row mb-5">
 			<div class="col-lg-6">
 				<div class="blog-preview__header">
+					{{ if .topTitle }}
 					<span class="top-title pre-line">{{ .topTitle }}</span>
+					{{ end }}
 					{{ .title | markdownify }}
 				</div>
 			</div>

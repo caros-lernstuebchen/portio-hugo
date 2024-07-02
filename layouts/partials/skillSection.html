@@ -38,7 +38,9 @@
             <div class="col-lg-6">
                 <div class="skill__progress">
                     <div class="skill__progress_heading mb-5">
+                        {{ if .topTitle }}
                         <span class="top-title pre-line">{{ .topTitle }}</span>
+                        {{ end }}
                         {{ .content | markdownify }}
                     </div>
                     {{ $section := .skill }}

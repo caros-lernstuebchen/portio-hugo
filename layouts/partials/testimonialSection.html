@@ -10,7 +10,9 @@
         <div class="row text-center">
             <div class="col-lg-6 offset-lg-3">
                 <div class="testimonial__header">
+                    {{ if .topTitle }}
                     <span class="top-title">{{ .topTitle }}</span>
+                    {{ end }}
                     {{ .title | markdownify }}
                 </div>
             </div>
