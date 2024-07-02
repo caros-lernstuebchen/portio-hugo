@@ -1,3 +1,4 @@
+<!--suppress JSAssignmentUsedAsCondition -->
 <section class="footer" id="contact">
 	<div class="footer__background_shape">
 		<svg viewBox="0 0 1920 79">
@@ -87,7 +88,6 @@
 		</div>
 	</div>
 </section>
-<script src="{{ "plugins/leaflet/leaflet.js" | absURL }}"></script>
 <script src="{{ "plugins/jQuery/jquery.min.js" | absURL }}"></script>
 <script src="{{ "plugins/bootstrap/bootstrap.min.js" | absURL }}"></script>
 <script src="{{ "plugins/slick/slick.min.js" | absURL }}"></script>
@@ -96,10 +96,13 @@
 <script src="{{ "plugins/tweenmax/TweenMax.min.js" | absURL }}"></script>
 <script src="{{ "plugins/imagesloaded/imagesloaded.min.js" | absURL }}"></script>
 <script src="{{ "plugins/masonry/masonry.min.js" | absURL }}"></script>
-<!-- {{ $formhandler := resources.Get "js/form-handler.js" | minify }}
-<script src="{{ $formhandler.Permalink }}"></script> -->
 {{ $script := resources.Get "js/script.js" | minify }}
 <script src="{{ $script.Permalink }}"></script>
+
+{{ if eq .Type "contact" }}
+{{ $scriptContact := resources.Get "js/contact.js" | minify }}
+<script src="{{ $scriptContact.Permalink }}"></script>
+<script src="{{ "plugins/leaflet/leaflet.js" | absURL }}"></script>
 <script>
 	{{ $map := .Site.Params.map }}
 	var map = L.map('map').setView([{{ $map.latitude }}, {{ $map.longitude }}], {{ $map.zoomLevel }});
@@ -112,3 +115,5 @@
 			.bindPopup({{ $map.popupText }})
 			.openPopup();
 </script>
+{{ end }}
+<!--suppress JSAssignmentUsedAsCondition -->
