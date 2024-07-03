@@ -29,9 +29,9 @@
                             {{ $rating := sub $rating 1 }}
                             {{ range $i, $sequence := (seq 5) }}
                             {{ if le $i $rating }}
-                            <li><i class="fa fa-star"></i></li>
+                            <li><i class="fa-solid fa-star"></i></li>
                             {{ else }}
-                            <li><i class="fa fa-star inactive"></i></li>
+                            <li><i class="fa-solid fa-star inactive"></i></li>
                             {{ end }}
                             {{ end }}
                         </ul>
