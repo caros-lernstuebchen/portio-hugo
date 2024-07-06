@@ -81,10 +81,6 @@ $(document).ready(function () {
     }
   });
 
-  $(".navbar-nav>li>a").on("click", function () {
-    $(".navbar-collapse").collapse("hide");
-  });
-
   // service slider
   $(".service__slider").slick({
     infinite: false,
@@ -168,14 +164,6 @@ $(document).ready(function () {
     preloader: false,
 
     fixedContentPos: false,
-  });
-
-  var portfolioGrid = $(".portfolio-item-grid").masonry({
-    itemSelector: ".portfolio-item",
-  });
-
-  portfolioGrid.imagesLoaded().progress(function () {
-    portfolioGrid.masonry("layout");
   });
 
   // blob animation
