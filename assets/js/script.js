@@ -91,7 +91,7 @@ $(document).ready(function () {
     slidesToShow: 3,
     slidesToScroll: 1,
     dots: false,
-    arrows: false,
+    arrows: true,
     responsive: [
       {
         breakpoint: 992,
@@ -99,6 +99,7 @@ $(document).ready(function () {
           slidesToShow: 2,
           slidesToScroll: 1,
           dots: true,
+          arrows: false,
         },
       },
       {
@@ -107,6 +108,7 @@ $(document).ready(function () {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: true,
+          arrows: false,
         },
       },
     ],

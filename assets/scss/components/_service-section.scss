@@ -59,8 +59,8 @@
                 }
             }
         }
-        .slick-list {
-            overflow: visible;
+        .slick-arrow::before {
+            color: $primary;
         }
         .slick-dots {
             display: flex;
