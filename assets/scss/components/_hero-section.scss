@@ -123,42 +123,6 @@
           object-fit: cover;
         }
       }
-      .popup-button {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: 60px;
-        width: 60px;
-        background: #ffffff;
-        border-radius: 50%;
-        z-index: 2;
-        transition: all 0.3s ease;
-        svg {
-          position: absolute;
-          top: 50%;
-          left: 55%;
-          transform: translate(-50%, -50%);
-          transition: all 0.3s ease;
-
-          path {
-            fill: $primary;
-          }
-        }
-        &:hover {
-          background-color: $primary;
-          svg {
-            path {
-              fill: #ffffff;
-            }
-          }
-        }
-      }
-      &:hover {
-        .popup-button {
-          transform: translate(-50%, -50%) scale(1.1);
-        }
-      }
     }
   }
 }
