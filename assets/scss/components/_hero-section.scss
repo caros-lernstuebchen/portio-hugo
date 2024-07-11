@@ -66,6 +66,7 @@
   &_figure {
     width: 90%;
     margin-left: auto;
+    margin-bottom: 10em;
     border-radius: 20px;
     position: relative;
     @include desktop {
@@ -83,11 +84,18 @@
       img {
         height: 100%;
         width: 100%;
+        border-radius: 0;
+      }
+      &-bottom {
+        top: initial;
+        bottom: -55px;
+        left: 50%;
       }
     }
     img {
       height: 100%;
       width: 100%;
+      border-radius: 2rem;
     }
     &-popup {
       position: absolute;
