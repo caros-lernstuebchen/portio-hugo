@@ -11,7 +11,7 @@
   </div>
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-7">
+      <div class="col-lg-8">
         <div class="hero_content">
           <div class="hero_blob">
             <svg viewBox="0 0 550 550">
@@ -28,8 +28,9 @@
             </svg>
           </div>
           <div class="mb-5">
-            {{ if .topTitle }}
-            <span class="top-title">{{ .topTitle }}</span>
+            {{ if .quote }}
+            <span class="quote">{{ .quote }}</span>
+            <span class="quote-author">{{ .quoteAuthor}}</span>
             {{ end }}
             {{ .content | markdownify }}
           </div>
@@ -37,19 +38,23 @@
             href="{{ .buttonURL | absURL }}">{{ .buttonName }}</a>
         </div>
       </div>
-      <div class="col-lg-5">
+      <div class="col-lg-4">
+        {{ if .image1 }}
         <div class="hero_figure">
           <div class="figure-svg">
             <img src="images/hero/figure-svg.svg" alt="figure-svg" />
           </div>
           <img src="{{ .image1 | absURL }}" alt="hero-image" />
         </div>
+        {{ end }}
+        {{ if .image2 }}
         <div class="hero_figure">
           <div class="figure-svg figure-svg-bottom">
             <img src="images/hero/figure-svg.svg" alt="figure-svg" />
           </div>
           <img src="{{ .image2 | absURL }}" alt="hero-image" />
         </div>
+        {{ end }}
       </div>
     </div>
   </div>
