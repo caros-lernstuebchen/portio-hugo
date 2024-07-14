@@ -21,6 +21,21 @@ a.text-dark {
     @extend .mb-3;
 }
 
+.quote {
+    font-family: $font-family-quotes;
+    font-size: 22px !important;
+    display: block;
+    color: $dark;
+    @extend .mb-3;
+
+    &-author {
+        width: 100%;
+        font-size: 15px !important;
+        text-align: right;
+        font-style: italic;
+    }
+}
+
 .pre-line {
     margin-left: 20px;
     position: relative;

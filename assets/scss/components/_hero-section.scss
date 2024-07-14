@@ -1,5 +1,5 @@
 .hero {
-  padding: 200px 0;
+  padding: 200px 0 100px 0;
   position: relative;
   display: flex;
   align-items: center;
@@ -66,7 +66,7 @@
   &_figure {
     width: 90%;
     margin-left: auto;
-    margin-bottom: 10em;
+    margin-bottom: 5em;
     border-radius: 20px;
     position: relative;
     @include desktop {

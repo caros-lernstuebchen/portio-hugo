@@ -3,7 +3,7 @@
 //
 
 // General
-$primary: #5d78ff;
+$primary: #2d89f2;
 $secondary: #282f49;
 // Text
 $headings-color: #282f49;
@@ -14,9 +14,25 @@ $body-color: #7e7e8a;
 //
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900|Yeseva+One&display=swap");
-$font-family-base: "Poppins", sans-serif;
-$headings-font-family: "Yeseva One", cursive;
+@font-face {
+  font-family: 'Handlee';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/font/Handlee/Handlee-Regular.ttf") format('woff2');
+}
+
+@font-face {
+  font-family: 'Playwrite';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/font/playwrite_PL/PlaywritePL-Regular.ttf") format('woff2');
+}
+
+$font-family-base: "Handlee";
+$font-family-quotes: "Playwrite";
+$headings-font-family: "Handlee";
 
 // Size
 $font-size-base: 1.125rem; // 18px
