@@ -1,6 +1,5 @@
 $(document).ready(function () {
-  // preloder
-  PageLoad();
+  $("body").removeClass("hidden");
 
   // change-navigation-color
   $(window).scroll(function () {
