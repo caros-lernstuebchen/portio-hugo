@@ -1,21 +1,43 @@
 $(document).ready(function () {
   $("body").removeClass("hidden");
 
-  // change-navigation-color
-  $(window).scroll(function () {
-    if ($(document).scrollTop() > 200) {
-      $(".navbar").addClass("nav__color__change");
-    } else {
-      $(".navbar").removeClass("nav__color__change");
+    // ####### Sticky header #######
+    function throttle(fn, delay) {
+        let last = undefined;
+        let timer = undefined;
+        return function () {
+            const now = +new Date();
+            if (last && now < last + delay) {
+                clearTimeout(timer);
+                timer = setTimeout(function () {
+                    last = now;
+                    fn();
+                }, delay);
+            } else {
+                last = now;
+                fn();
+            }
+        };
     }
-  });
 
-  // Smooth scrolling
-  new SmoothScroll('a[class*="scroll"]', {
-    easing: 'easeInQuad',
-    speed: 300,
-    header: 'nav'
-  });
+    function onScroll() {
+        if (window.scrollY) {
+            $$header.classList.add('nav__color__change');
+        } else {
+            $$header.classList.remove('nav__color__change');
+        }
+    }
+    const $$header = document.querySelector('.navbar');
+    window.addEventListener('scroll', throttle(onScroll, 25));
+    // #############################
+
+    // ####### Smooth scrolling #######
+    new SmoothScroll('a[class*="scroll"]', {
+        easing: 'easeInQuad',
+        speed: 300,
+        header: 'nav'
+    });
+    // ################################
 
   $(".navbar-nav>li>a").on("click", function () {
     $(".navbar-collapse").collapse("hide");
