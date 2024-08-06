@@ -21,56 +21,53 @@ $(document).ready(function () {
     $(".navbar-collapse").collapse("hide");
   });
 
-  // service slider
-  $(".service__slider").slick({
-    infinite: false,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    dots: false,
-    arrows: true,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          dots: true,
-          arrows: false,
+    // ####### service slider #######
+    new Swiper('#service-slider', {
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 0,
+        pagination: {
+            el: '#service-swiper-pagination',
+            clickable: true,
         },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: true,
-          arrows: false,
+        navigation: {
+            nextEl: '#service-swiper-button-next',
+            prevEl: '#service-swiper-button-prev',
         },
-      },
-    ],
-  });
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            1024: {
+                slidesPerView: 3,
+            },
+        },
+    });
+    // ##############################
 
-  // Testimonial slider
-  $(".testimonial__slider").slick({
-    infinite: true,
-    slidesToShow: 2,
-    slidesToScroll: 1,
-    dots: true,
-    arrows: false,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
+    // ####### Testimonial slider #######
+    new Swiper('#testimonial-slider', {
+        direction: 'horizontal',
+        loop: true,
+        autoplay: {
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
         },
-      },
-    ],
-  });
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: '#testimonial-swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            1024: {
+                slidesPerView: 2,
+            },
+        },
+    });
+    // #############################
 
   // blob animation
   var tl = new TimelineMax({

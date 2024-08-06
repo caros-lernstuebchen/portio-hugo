@@ -9,9 +9,9 @@
   {{ "<!-- Leaflet -->" | safeHTML }}
   <link rel="stylesheet" href="{{ "plugins/leaflet/leaflet.css" | absURL }}" />
 
-  {{ "<!-- Slick Carousel -->" | safeHTML }}
-  <link rel="stylesheet" href="{{ "plugins/slick/slick.css" | absURL }}" />
-  <link rel="stylesheet" href="{{ "plugins/slick/slick-theme.css" | absURL }}" />
+  {{ "<!-- Swiper -->" | safeHTML }}
+  <link rel="stylesheet" href="{{ "plugins/swiper/swiper-bundle.min.css" | absURL }}" />
+
   {{ "<!-- Font Awesome -->" | safeHTML }}
   <link rel="stylesheet" href="{{ "plugins/font-awesome/css/fontawesome.min.css" | absURL }}" />
   <link rel="stylesheet" href="{{ "plugins/font-awesome/css/solid.min.css" | absURL }}" />
@@ -24,6 +24,7 @@
   {{ "<!--Favicon-->" | safeHTML }}
   <link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}" type="image/x-icon" />
   <link rel="icon" href="{{ "images/favicon.png" | absURL }}" type="image/x-icon" />
+
   {{ with site.Params.googleAnalytics }}
   {{ "<!-- Google Analytics -->" | safeHTML }}
   <script async src="https://www.googletagmanager.com/gtag/js?id={{ . }}"></script>
@@ -31,7 +32,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', '{{ . }}');
   </script>
   {{ end }}

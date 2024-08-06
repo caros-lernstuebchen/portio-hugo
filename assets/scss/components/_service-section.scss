@@ -36,10 +36,12 @@
         }
     }
     &__slider {
+        --swiper-navigation-sides-offset: 0;
+        --swiper-pagination-bottom: 10px;
+
         &_item {
-            margin: 15px;
             padding: 30px;
-            box-shadow: 0px 20px 40px 0px rgba(50, 65, 141, 0.12);
+            box-shadow: 10px 10px 10px rgba(50, 65, 141, 0.12);
             border-radius: 20px;
             background: $white;
             &-icon {
@@ -58,55 +60,24 @@
                     z-index: 1;
                 }
             }
-        }
-        .slick-arrow::before {
-            color: $primary;
-        }
-        .slick-dots {
-            display: flex;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            justify-content: center;
-            li {
-                margin: 0;
-                list-style: none;
-                height: 8px;
-                width: 8px;
-                &:not(:last-child) {
-                    margin-right: 15px;
-                }
-                button {
-                    cursor: pointer;
-                    height: 100%;
-                    width: 100%;
-                    background: #c2c8cc;
-                    border-radius: 50%;
-                    transition: all 0.3s ease;
-                    display: block;
-                    padding: 0;
-                    text-indent: -9999px;
-                    &:focus {
-                        outline: 0;
-                    }
-                    &:hover {
-                        background: $primary;
-                    }
-                }
-                &.slick-active {
-                    height: 10px;
-                    width: 10px;
-                    border-radius: 50%;
-                    button {
-                        background-color: $primary;
-                    }
-                }
+            &_wrapper {
+                padding: 20px;
             }
         }
-        .slick-slide {
-            &:focus {
-                outline: 0;
-            }
-        }
+    }
+}
+
+@media (min-width: 768px) {
+    #service-swiper-pagination {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    #service-swiper-button-next {
+        display: none;
+    }
+    #service-swiper-button-prev {
+        display: none;
     }
 }
