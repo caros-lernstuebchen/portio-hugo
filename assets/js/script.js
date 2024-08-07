@@ -29,14 +29,6 @@ const $$header = document.querySelector('.navbar');
 window.addEventListener('scroll', throttle(onScroll, 25));
 // #############################
 
-// ####### Smooth scrolling #######
-new SmoothScroll('a[class*="scroll"]', {
-    easing: 'easeInQuad',
-    speed: 300,
-    header: 'nav'
-});
-// ################################
-
 // ####### Hide menu on small screens #######
 $(".navbar-nav>li>a").on("click", function () {
     $(".navbar-collapse").collapse("hide");
