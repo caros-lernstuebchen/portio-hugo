@@ -79,7 +79,7 @@ $(document).ready(function () {
             pauseOnMouseEnter: true,
         },
         slidesPerView: 1,
-        spaceBetween: 10,
+        spaceBetween: 20,
         pagination: {
             el: '#testimonial-swiper-pagination',
             clickable: true,
