@@ -30,9 +30,9 @@ window.addEventListener('scroll', throttle(onScroll, 25));
 // #############################
 
 // ####### Hide menu on small screens #######
-$(".navbar-nav>li>a").on("click", function () {
-    $(".navbar-collapse").collapse("hide");
-});
+Array.from(document.querySelectorAll(".navbar-nav>li>a")).forEach(e => e.addEventListener("click",  function () {
+    document.querySelector(".navbar-collapse").collapse("hide");
+}))
 // ##########################################
 
 // ####### service slider #######
