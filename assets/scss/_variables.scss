@@ -49,3 +49,20 @@ $line-height-base: 1.75;
 
 // Misc
 $link-hover-decoration: none;
+
+// Override default bootstrap breakpoints
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1200px
+);
+
+$container-max-widths: (
+        sm: 420px,
+        md: 720px,
+        lg: 960px,
+        xl: 1150px
+);
